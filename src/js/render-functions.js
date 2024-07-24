@@ -15,3 +15,4 @@ export function clearImages() {
     const list = document.querySelector(".gallery-list");
     list.innerHTML = "";
 }
+
