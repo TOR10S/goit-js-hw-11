@@ -10,7 +10,7 @@ export function createImages(data) {
         captionDelay: 250
      });
     const list = document.querySelector(".gallery-list");
-    let images =  data.hits.map((hit) => `<div class="image-frame"><a href="${hit.largeImageURL}"><img class="image" src="${hit.webformatURL}" alt="${hit.tags}" /></a><h5>likes</h5><p>${hit.likes}</p></div>`).join("");
+    let images =  data.hits.map((hit) => `<div class="image-frame"><a href="${hit.largeImageURL}"><img class="image" src="${hit.webformatURL}" alt="${hit.tags}" /></a><div class ="text-wraper"><div class="text-block"><h5>likes</h5><p>${hit.likes}</p></div><div class="text-block"><h5>views</h5><p>${hit.views}</p></div><div class="text-block"><h5>comments</h5><p>${hit.comments}</p></div><div class="text-block"><h5>downloads</h5><p>${hit.downloads}</p></div></div></div>`).join("");
     list.insertAdjacentHTML("afterbegin", images);
     lightbox.refresh();
 }
