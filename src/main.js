@@ -19,7 +19,7 @@ function handleSubmit(event) {
     event.preventDefault();
     loader.classList.remove("hiden")
     let wordForSearch = input.value.trim();
-    setTimeout (()=> {searchImagesByQuery(`${wordForSearch}`).then((data) => {if (data.total === 0) {
+    searchImagesByQuery(`${wordForSearch}`).then((data) => {if (data.total === 0) {
       iziToast.error({
         position: "topRight",
           message: 'Sorry, there are no images matching your search query. Please try again!',
@@ -35,7 +35,7 @@ function handleSubmit(event) {
       return;
   } else {createImages(data)}
     loader.classList.add("hiden")
-  });}, 1750)
+  });
     
 }
 
